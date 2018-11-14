@@ -6,9 +6,11 @@ import java.util.Map;
 
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.ProcessEngineConfiguration;
+import org.activiti.engine.RepositoryService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.history.HistoricVariableInstance;
 import org.activiti.engine.repository.Deployment;
+import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.runtime.ProcessInstance;
 
 public class Test02 {
@@ -36,7 +38,7 @@ public class Test02 {
 //		queryMyTask("张三1");
 		
 		//完成当前任务
-		complete("100008");
+//		complete("100008");
 		
 		//可以分配个人任务从一个人到另一个人（认领任务）
 //		setAssigneeTask("67502");
@@ -61,7 +63,7 @@ public class Test02 {
 		//判断流程是否结束
 //		getProcessState("27501");
 		
-		
+		queryProcessNow();
 	}
 	/**
 	 * 发布流程
@@ -182,7 +184,20 @@ public class Test02 {
 		processEngine.getTaskService()//
 		.setAssignee(taskId, userId);
 
+	}
+	/**
+	 * 查看已经部署的流程
+	 */
+	public static void queryProcessNow() {
+		RepositoryService repositoryService = processEngine.getRepositoryService();
+		List<ProcessDefinition> processDefinitions = repositoryService.createProcessDefinitionQuery().latestVersion().list();
+		for (ProcessDefinition processDefinition : processDefinitions) {
+			System.out.println(processDefinition.getKey() + "     " +processDefinition.getName());
+			System.out.println(processDefinition.getResourceName() + "     " +processDefinition.getName());
+			
 		}
+	}
+	
 	
 }
 
