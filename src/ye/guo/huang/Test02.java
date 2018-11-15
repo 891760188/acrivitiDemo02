@@ -59,11 +59,11 @@ public class Test02 {
 //		getVariables("17504");
 		
 		//获取历史流程变量
-//		getHisVariables("15001");
+		getHisVariables("107501");
 		//判断流程是否结束
 //		getProcessState("27501");
 		
-		queryProcessNow();
+//		queryProcessNow();
 	}
 	/**
 	 * 发布流程

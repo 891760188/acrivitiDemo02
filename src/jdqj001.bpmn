@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
-  <process id="jdqjId005" name="基地请假jdqjId004" isExecutable="true">
+  <process id="jdqjId006" name="基地请假jdqjId004" isExecutable="true">
     <startEvent id="startevent1" name="开始"></startEvent>
     <userTask id="usertask1" name="小组长审批" activiti:assignee="${xzz}"></userTask>
     <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="usertask1"></sequenceFlow>
@@ -35,8 +35,8 @@
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${pass==0}]]></conditionExpression>
     </sequenceFlow>
   </process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_jdqjId005">
-    <bpmndi:BPMNPlane bpmnElement="jdqjId005" id="BPMNPlane_jdqjId005">
+  <bpmndi:BPMNDiagram id="BPMNDiagram_jdqjId006">
+    <bpmndi:BPMNPlane bpmnElement="jdqjId006" id="BPMNPlane_jdqjId006">
       <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
         <omgdc:Bounds height="35.0" width="35.0" x="140.0" y="160.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
